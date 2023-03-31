@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="post">
+    <label>Name: <input type="text" name="name" value="{{ profile.name }}"></label><br>
+    <label>Bio: <textarea name="bio">{{ profile.bio }}</textarea></label><br>
+    <label>Profile Pic URL: <input type="text" name="profile_pic" value="{{ profile.profile_pic }}"></label><br>
+    <h2>Courses:</h2>
+    <ul>
+        {% for course in profile.courses %}
+            <li>{{ course }}</li>
+        {% endfor %}
+    </ul>
+    <label>New Course: <input type="text" name="new_course"></label><br>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

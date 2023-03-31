@@ -1,0 +1,13 @@
+{% block profile %}
+<h1>ProfilePageTest</h1>
+<p>Name: {{ profile.name }}</p>
+<p>Bio: {{ profile.bio }}</p>
+<img src="{{ profile.profile_pic }}" alt="Profile Picture">
+<h2>Courses:</h2>
+<ul>
+  {% for course in profile.courses %}
+    <li>{{ course }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
